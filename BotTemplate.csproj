@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F4EA285-7211-410C-B5FA-2F3AE61AEEDB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BotTemplate</RootNamespace>
+    <AssemblyName>BotTemplate</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fasmdll_managed, Version=1.0.3262.20709, Culture=neutral, processorArchitecture=x86">
+      <HintPath>Libs\fasmdll_managed.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bot.cs" />
+    <Compile Include="BO\SettingsObj.cs" />
+    <Compile Include="GUI\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\PluginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\PluginForm.Designer.cs">
+      <DependentUpon>PluginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\ProcessSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\ProcessSelectionForm.Designer.cs">
+      <DependentUpon>ProcessSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Console.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Console.Designer.cs">
+      <DependentUpon>Console.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Logger.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserApi\Bot.cs" />
+    <Compile Include="UserApi\Vector3.cs" />
+    <Compile Include="WoWObjects\Aura.cs" />
+    <Compile Include="WoW.cs" />
+    <Compile Include="WoWObjects\GameObject.cs" />
+    <Compile Include="WoWObjects\LocalPlayer.cs" />
+    <Compile Include="WoWObjects\BaseObject.cs" />
+    <Compile Include="WoWObjects\Player.cs" />
+    <Compile Include="WoWObjects\Unit.cs" />
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Constants\Offsets.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="GUI\UC\PluginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\PluginControl.Designer.cs">
+      <DependentUpon>PluginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Hooks\D3DHook.cs" />
+    <Compile Include="Helper\BlackMagic\BMInject.cs" />
+    <Compile Include="Helper\BlackMagic\BMMain.cs" />
+    <Compile Include="Helper\BlackMagic\BMMemory.cs" />
+    <Compile Include="Helper\BlackMagic\BMPattern.cs" />
+    <Compile Include="Helper\BlackMagic\BMThread.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SInject.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SMemory.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SPattern.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SProcess.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SThread.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\SWindow.cs" />
+    <Compile Include="Helper\BlackMagic\Static Classes\Win32Imports.cs" />
+    <Compile Include="Helper\ExceptionLogger\ExceptionLogger.cs" />
+    <Compile Include="Helper\ExceptionLogger\TextFileLogger.cs" />
+    <Compile Include="BO\AllocatedMemory.cs" />
+    <Compile Include="Managers\ObjectManager.cs" />
+    <Compile Include="Managers\PluginManager.cs" />
+    <Compile Include="Managers\SpellManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnsortedFunctions.cs" />
+    <Compile Include="UserApi\WoWObjects\Aura.cs" />
+    <Compile Include="UserApi\WoWObjects\GameObject.cs" />
+    <Compile Include="UserApi\WoWObjects\LocalPlayer.cs" />
+    <Compile Include="UserApi\WoWObjects\Player.cs" />
+    <Compile Include="UserApi\WoWObjects\Unit.cs" />
+    <Compile Include="UserApi\WoWObjects\BaseObject.cs" />
+    <Compile Include="UserApi\Enums.cs" />
+    <Compile Include="UserApi\WoW.cs" />
+    <Compile Include="UserApi\Interfaces\IPlugin.cs" />
+    <Compile Include="UserApi\Managers\ObjectManager.cs" />
+    <Compile Include="UserApi\Managers\SpellManager.cs" />
+    <Compile Include="UserApi\UnsortedFunctions.cs" />
+    <Compile Include="Managers\MemoryManager.cs" />
+    <Compile Include="Helper\Xml\XmlLoad.cs" />
+    <Compile Include="Helper\Xml\XmlSave.cs" />
+    <EmbeddedResource Include="GUI\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\PluginForm.resx">
+      <DependentUpon>PluginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\ProcessSelectionForm.resx">
+      <DependentUpon>ProcessSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Console.resx">
+      <DependentUpon>Console.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\PluginControl.resx">
+      <DependentUpon>PluginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\fasmdll_managed.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
